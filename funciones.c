@@ -2,10 +2,12 @@
 #include<stdio.h>
 #include<ctype.h>
 
-void interfaz(char selector, int vida){
+//Despliegue del menú de acciones
+void interfaz(char selector, int vida, int sed, int hambre, int numDias){
     
-    //Declarar la función de comprobación
+    //Declarar funciones
     char validacionDeOpcion();
+    void estadisticasFinales(int vida, int sed, int hambre, int numDias);
 
     do{
         selector = validacionDeOpcion();
@@ -38,11 +40,15 @@ void interfaz(char selector, int vida){
             system("cls");
             break;
         }
+        
+        if(selector >= 49 && selector <= 52)
+            estadisticasFinales(vida, sed, hambre, numDias++);
 
     }while(vida > 0); 
 
 }
 
+//Comprobación de opciones del menu de acciones
 char validacionDeOpcion(){
 
     char selectorMenu;
@@ -61,4 +67,17 @@ char validacionDeOpcion(){
     }while(isdigit(selectorMenu) != 1);
 
     return selectorMenu;
+}
+
+//Despliegue de estadisticas diarias
+void estadisticasFinales(int vida, int sed, int hambre, int numDias){
+
+    printf("Dia %d superado\n\n", numDias);
+    printf("+------+------+--------+\n");
+    printf("| Vida |  Sed | Hambre |\n");
+    printf("|------+------+--------|\n");
+    printf("| %4d | %4d | %6d |\n", vida, sed, hambre);
+    printf("+------+------+--------+\n\n");
+    system("pause");
+    system("cls");
 }

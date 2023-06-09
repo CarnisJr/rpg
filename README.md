@@ -10,4 +10,4 @@ Hacer un rpg en el cual se pueda realizar determinas acciones. El juego durará 
 - [ ] Buscar objetos
 - [ ] Muerte por hambre
 - [ ] Muerte por sed
-- [ ] Estadisticas al final del día
+- [x] Estadisticas al final del día

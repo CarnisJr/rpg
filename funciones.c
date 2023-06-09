@@ -2,20 +2,41 @@
 #include<stdio.h>
 #include<ctype.h>
 
+//Definir constantes
+#define MAX_DIAS 10
+#define MAX_SED 100
+#define MAX_HAMBRE 100
+#define MAX_SALUD 100
+
 //Despliegue del menú de acciones
 void interfaz(char selector, int vida, int sed, int hambre, int numDias){
     
     //Declarar funciones
-    char validacionDeOpcion();
-    void estadisticasFinales(int vida, int sed, int hambre, int numDias);
+    char validacionDeOpcion(int numDias);
+    void estadisticasFinales(int vida, int sed, int hambre);
+    int comprobarLimitesEstadisticas(int vida);
+
 
     do{
-        selector = validacionDeOpcion();
+
+        selector = validacionDeOpcion(numDias);
+        
+        if(vida >= 100){
+            printf("Tu salud esta al maximo, no puedes descansar\n\n");
+            system("pause");
+            system("cls");
+            selector = 53;
+        }
+
+        printf("Sus estadisticas actuales son\n\n");
+        estadisticasFinales(vida, sed, hambre);
 
         switch (selector)
         {
         case 49:                                        //49 = '1'
-            printf("Descansaste\n");
+            printf("Decidiste descansar. Tu salud aumenta en 10 puntos de salud\n\n");
+            vida += 10;
+            vida = comprobarLimitesEstadisticas(vida);
             system("pause");
             system("cls");
             break;
@@ -35,26 +56,25 @@ void interfaz(char selector, int vida, int sed, int hambre, int numDias){
             system("cls");
             break;
         default:
-            printf("Opcion no valida\n");
-            system("pause");
-            system("cls");
             break;
         }
         
-        if(selector >= 49 && selector <= 52)
-            estadisticasFinales(vida, sed, hambre, numDias++);
+        if(selector >= 49 && selector <= 52){
+            printf("Dia %d superado\n\n", numDias++);
+            estadisticasFinales(vida, sed, hambre);
+        }
 
-    }while(vida > 0); 
+    }while(vida > 0 && numDias != MAX_DIAS); 
 
 }
 
 //Comprobación de opciones del menu de acciones
-char validacionDeOpcion(){
+char validacionDeOpcion(int numDias){
 
     char selectorMenu;
 
     do{
-        printf("Bienvenido a \"____\"\n\n");
+        printf("Estas en el dia: %d\n\n", numDias);
         printf("1. Descansar\n2. Buscar Agua\n3. Cazar\n4. Buscar Objetos\n\n");
         printf("Ingrese una opcion: ");
         fflush(stdin);
@@ -70,9 +90,8 @@ char validacionDeOpcion(){
 }
 
 //Despliegue de estadisticas diarias
-void estadisticasFinales(int vida, int sed, int hambre, int numDias){
+void estadisticasFinales(int vida, int sed, int hambre){
 
-    printf("Dia %d superado\n\n", numDias);
     printf("+------+------+--------+\n");
     printf("| Vida |  Sed | Hambre |\n");
     printf("|------+------+--------|\n");
@@ -80,4 +99,13 @@ void estadisticasFinales(int vida, int sed, int hambre, int numDias){
     printf("+------+------+--------+\n\n");
     system("pause");
     system("cls");
+}
+
+//Comprobar limites de la vida
+int comprobarVida(int vida){
+
+    if(vida > MAX_SALUD)
+        vida -= (vida - MAX_SALUD); 
+    
+    return vida;
 }

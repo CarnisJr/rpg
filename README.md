@@ -4,6 +4,7 @@ Hacer un rpg en el cual se pueda realizar determinas acciones. El juego durará 
 - [x] Interfaz de usuario
 - [x] Definir las constantes
 - [x] Switch de acciones del jugador
+- [ ] Comprobar limites de estadisticas
 - [ ] Acción uno "Descansar" 
 - [ ] Buscar agua 
 - [ ] Cazar 

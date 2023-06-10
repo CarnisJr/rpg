@@ -46,7 +46,7 @@ void interfaz(char selector, int vida, int sed, int hambre, int numDias){
             selector = 0;
         }
 
-        printf("Sus estadisticas actuales son\n\n");
+        printf("\nSus estadisticas actuales son\n\n");
         estadisticasFinales(vida, sed, hambre);
 
         switch (selector)
@@ -122,10 +122,10 @@ void interfaz(char selector, int vida, int sed, int hambre, int numDias){
         }
 
         //aumento de hambre y sed por dia
-        printf("\nLa suerte esta de tu lado... has superado el dia numero %d\n\n", numDias);
-        printf("Eres un simple y debil humano... tu hambre y sed disminuyen en 30 unidades\n\n");
-        hambre += 30;
-        sed += 30;
+        printf("\nLa suerte esta de tu lado... has superado este dia, sin embargo... \n\n", numDias);
+        printf("Eres un simple y debil humano... tu hambre y sed aumentan en 10 unidades\n\n");
+        hambre += 10;
+        sed += 10;
         hambre = comprobarEstadistica(hambre, MAX_HAMBRE);
         sed = comprobarEstadistica(sed, MAX_SED);
         system("pause");
@@ -133,14 +133,14 @@ void interfaz(char selector, int vida, int sed, int hambre, int numDias){
 
         //Daño por tener 100 de hambre o sed
         if(sed == 100){
-            printf("\nTienes demasiada sed... Tu vida disminuye en 30 unidades\n\n");
-            vida -= 30;
+            printf("\nTienes demasiada sed... Tu vida disminuye en 20 unidades\n\n");
+            vida -= 20;
             system("pause");
             system("cls");
         }
         if(hambre == 100){
-            printf("\nTienes demasiada hambre... Tu vida disminuye en 20 unidades\n\n");
-            vida -= 20;
+            printf("\nTienes demasiada hambre... Tu vida disminuye en 15 unidades\n\n");
+            vida -= 15;
             system("pause");
             system("cls");
         }

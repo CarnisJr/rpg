@@ -14,7 +14,7 @@ void interfaz(char selector, int vida, int sed, int hambre, int numDias){
     //Declarar funciones
     char validacionDeOpcion(int numDias);
     void estadisticasFinales(int vida, int sed, int hambre);
-    int comprobarLimitesEstadisticas(int vida);
+    int comprobarVida(int vida);
 
 
     do{
@@ -36,7 +36,7 @@ void interfaz(char selector, int vida, int sed, int hambre, int numDias){
         case 49:                                        //49 = '1'
             printf("Decidiste descansar. Tu salud aumenta en 10 puntos de salud\n\n");
             vida += 10;
-            vida = comprobarLimitesEstadisticas(vida);
+            vida = comprobarVida(vida);
             system("pause");
             system("cls");
             break;
@@ -79,12 +79,12 @@ char validacionDeOpcion(int numDias){
         printf("Ingrese una opcion: ");
         fflush(stdin);
         scanf("%c", &selectorMenu);
-        if(isdigit(selectorMenu) != 1)
-            printf("No se admiten letras\n");
+        if(isdigit(selectorMenu) != 1 || selectorMenu > 40 )
+            printf("Error\n");
             system("pause");
             system("cls");
             
-    }while(isdigit(selectorMenu) != 1);
+    }while(isdigit(selectorMenu) != 1 || selectorMenu > 40);
 
     return selectorMenu;
 }

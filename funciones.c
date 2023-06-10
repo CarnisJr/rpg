@@ -146,6 +146,11 @@ void interfaz(char selector, int vida, int sed, int hambre, int numDias){
                 system("cls");
             }
             vida = comprobarEstadistica(vida, MAX_SALUD);
+        }else{
+
+            printf("\nSigues en el mismo dia, eligue otra opcion\n\n");
+            system("pause");
+            system("cls");
         }
 
         //Verificar si mueres

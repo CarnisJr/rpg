@@ -12,4 +12,3 @@ Hacer un rpg en el cual se pueda realizar determinas acciones. El juego durará 
 - [x] Daño por hambre
 - [x] Daño por sed
 - [x] Estadisticas al final del día
-- [ ] guardar kit de primeros auxilios para usar después

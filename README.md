@@ -4,11 +4,12 @@ Hacer un rpg en el cual se pueda realizar determinas acciones. El juego durará 
 - [x] Interfaz de usuario
 - [x] Definir las constantes
 - [x] Switch de acciones del jugador
-- [ ] Comprobar limites de estadisticas
-- [ ] Acción uno "Descansar" 
-- [ ] Buscar agua 
-- [ ] Cazar 
-- [ ] Buscar objetos
-- [ ] Muerte por hambre
-- [ ] Muerte por sed
+- [x] Comprobar limites de estadisticas
+- [x] Acción uno "Descansar" 
+- [x] Buscar agua 
+- [x] Cazar 
+- [x] Buscar objetos
+- [x] Daño por hambre
+- [x] Daño por sed
 - [x] Estadisticas al final del día
+- [ ] guardar kit de primeros auxilios para usar después

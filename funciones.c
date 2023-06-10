@@ -20,12 +20,12 @@ void interfaz(char selector, int vida, int sed, int hambre, int numDias){
     do{
 
         selector = validacionDeOpcion(numDias);
-        
+         
         if(vida >= 100){
             printf("Tu salud esta al maximo, no puedes descansar\n\n");
             system("pause");
             system("cls");
-            selector = 53;
+            selector = 0;
         }
 
         printf("Sus estadisticas actuales son\n\n");
@@ -56,6 +56,7 @@ void interfaz(char selector, int vida, int sed, int hambre, int numDias){
             system("cls");
             break;
         default:
+            system("cls");
             break;
         }
         
@@ -77,14 +78,15 @@ char validacionDeOpcion(int numDias){
         printf("Estas en el dia: %d\n\n", numDias);
         printf("1. Descansar\n2. Buscar Agua\n3. Cazar\n4. Buscar Objetos\n\n");
         printf("Ingrese una opcion: ");
-        fflush(stdin);
-        scanf("%c", &selectorMenu);
-        if(isdigit(selectorMenu) != 1 || selectorMenu > 40 )
+        scanf(" %c", &selectorMenu);
+        if(isdigit(selectorMenu) != 1 || selectorMenu > 52){
             printf("Error\n");
-            system("pause");
-            system("cls");
+        }
+        system("pause");
+        system("cls");
+        fflush(stdin);
             
-    }while(isdigit(selectorMenu) != 1 || selectorMenu > 40);
+    }while(isdigit(selectorMenu) != 1 || selectorMenu > 52);
 
     return selectorMenu;
 }

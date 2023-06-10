@@ -29,21 +29,21 @@ void interfaz(char selector, int vida, int sed, int hambre, int numDias){
             printf("\nTu salud esta al maximo, no puedes descansar\n\n");
             system("pause");
             system("cls");
-            selector = 0;
+            selector = 1;
         }
 
         if(sed <= 0 && selector == 50){
             printf("\nEstas completamente hidratdo, no puedes puedes ir a buscar agua\n\n");
             system("pause");
             system("cls");
-            selector = 0;
+            selector = 1;
         }
 
         if(hambre <= 0 && selector == 51){
             printf("\nNo estas hambriento, no puedes puedes ir a cazar\n\n");
             system("pause");
             system("cls");
-            selector = 0;
+            selector = 1;
         }
 
         printf("\nSus estadisticas actuales son\n\n");
@@ -121,30 +121,32 @@ void interfaz(char selector, int vida, int sed, int hambre, int numDias){
             break;
         }
 
-        //aumento de hambre y sed por dia
-        printf("\nLa suerte esta de tu lado... has superado este dia, sin embargo... \n\n", numDias);
-        printf("Eres un simple y debil humano... tu hambre y sed aumentan en 10 unidades\n\n");
-        hambre += 10;
-        sed += 10;
-        hambre = comprobarEstadistica(hambre, MAX_HAMBRE);
-        sed = comprobarEstadistica(sed, MAX_SED);
-        system("pause");
-        system("cls");
+        if(selector != 1){
+            //aumento de hambre y sed por dia
+            printf("\nLa suerte esta de tu lado... has superado este dia, sin embargo... \n\n", numDias);
+            printf("Eres un simple y debil humano... tu hambre y sed aumentan en 10 unidades\n\n");
+            hambre += 10;
+            sed += 10;
+            hambre = comprobarEstadistica(hambre, MAX_HAMBRE);
+            sed = comprobarEstadistica(sed, MAX_SED);
+            system("pause");
+            system("cls");
 
-        //Daño por tener 100 de hambre o sed
-        if(sed == 100){
-            printf("\nTienes demasiada sed... Tu vida disminuye en 20 unidades\n\n");
-            vida -= 20;
-            system("pause");
-            system("cls");
+            //Daño por tener 100 de hambre o sed
+            if(sed == 100){
+                printf("\nTienes demasiada sed... Tu vida disminuye en 20 unidades\n\n");
+                vida -= 20;
+                system("pause");
+                system("cls");
+            }
+            if(hambre == 100){
+                printf("\nTienes demasiada hambre... Tu vida disminuye en 15 unidades\n\n");
+                vida -= 15;
+                system("pause");
+                system("cls");
+            }
+            vida = comprobarEstadistica(vida, MAX_SALUD);
         }
-        if(hambre == 100){
-            printf("\nTienes demasiada hambre... Tu vida disminuye en 15 unidades\n\n");
-            vida -= 15;
-            system("pause");
-            system("cls");
-        }
-        vida = comprobarEstadistica(vida, MAX_SALUD);
 
         //Verificar si mueres
         if(vida == 0){

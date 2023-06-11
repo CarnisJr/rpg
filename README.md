@@ -13,15 +13,19 @@ Las estadisticas iniciales son:
     - 35% de probabilidad de encontrar botellas de agua, disminuye 5 unidades de sed.
     - 45% de probabilidad de sufrir un ataque que te reduce la vida en 5 unidades.
     - Si tienes 0 puntos de sed no puedes ir a buscar agua.
+    - Si tienes 25 o menos puntos de vida no puedes ir a buscar agua.
 - Cazar:
     - 30% de probabilidad de cazar un conejo, reduce el hambre en 30 unidades.
     - 30% de probabilidad de pescar un pez, reduce el hambre en 10 unidades.
     - 40% de probabilidad de sufrir un ataque, reduce la vida en 10 unidades.
+    - Si tienes 0 puntos de hambre no puedes ir a cazar.
+    - Si tienes 25 o menos puntos de vida no puedes ir a cazar.
 - Buscar objetos:
     - 25% de probabilidad de encontrar un kit de primeros auxilios, aumenta tu vida en 15 unidades.
     - 25% de probabilidad de encontrar latas de comida, reducen el hambre en 10 unidades.
     - 25% de probabilidad de ser atacado por avispas, reduce tu vida en 10 unidades.
     - 25% de probabilidad de caer en un foso, reduce tu vida en 15 unidades.
+    - Si tienes 50 o menos puntos de vida no puedes ir a buscar objetos.
 ## To do list
 - [x] Interfaz de usuario
 - [x] Definir las constantes

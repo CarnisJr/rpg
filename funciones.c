@@ -46,7 +46,7 @@ void interfaz(char selector, int vida, int sed, int hambre, int numDias){
             selector = 1;
         }
 
-        printf("\nSus estadisticas actuales son\n\n");
+        printf("\nTus estadisticas actuales son\n\n");
         estadisticasFinales(vida, sed, hambre);
 
         switch (selector)
@@ -155,7 +155,7 @@ void interfaz(char selector, int vida, int sed, int hambre, int numDias){
 
         //Verificar si mueres
         if(vida == 0){
-            printf("---ESTAS MUERTO, DEBIL---\n\n");
+            printf("\n---ESTAS MUERTO, DEBIL---\n\n");
             printf("Solo %d dias vivo... una decepcion...\n\n", numDias);
             system("pause");
             system("cls");
@@ -164,7 +164,7 @@ void interfaz(char selector, int vida, int sed, int hambre, int numDias){
 
         //Imprimir las estadisticas si pasaste el día
         if(selector >= 49 && selector <= 52){
-            printf("Dia %d superado\n\n", numDias++);
+            printf("\nDia %d superado\n\n", numDias++);
             estadisticasFinales(vida, sed, hambre);
         }
 
@@ -178,10 +178,11 @@ char validacionDeOpcion(int numDias){
     char selectorMenu;
 
     do{
-        printf("Estas en el dia: %d\n\n", numDias);
+        printf("\nEstas en el dia: %d\n\n", numDias);
         printf("1. Descansar\n2. Buscar Agua\n3. Cazar\n4. Buscar Objetos\n\n");
         printf("Ingrese una opcion: ");
         scanf(" %c", &selectorMenu);
+        printf("\n");
         if(isdigit(selectorMenu) != 1 || selectorMenu > 52){
             printf("Error\n");
         }

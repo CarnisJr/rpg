@@ -14,6 +14,7 @@ void interfaz(char selector, int vida, int sed, int hambre, int numDias){
     
     //Variables
     int chance;
+    char estadisticaString[10];
     //Declarar funciones
     char validacionDeOpcion(int numDias);
     void estadisticasFinales(int vida, int sed, int hambre);
@@ -32,15 +33,28 @@ void interfaz(char selector, int vida, int sed, int hambre, int numDias){
             selector = 1;
         }
 
-        if(sed <= 0 && selector == 50){
-            printf("\nEstas completamente hidratdo, no puedes puedes ir a buscar agua\n\n");
+        if((sed <= 0 || vida <= 25) && selector == 50){
+            if(vida <= 25)
+                printf("\nEstas muy debil, debes descansar...\n\n");
+            else
+                printf("\nEstas completamente hidratado, no puedes puedes ir a buscar agua\n\n");
             system("pause");
             system("cls");
             selector = 1;
         }
 
-        if(hambre <= 0 && selector == 51){
-            printf("\nNo estas hambriento, no puedes puedes ir a cazar\n\n");
+        if((hambre <= 0 || vida <= 25) && selector == 51){
+            if(vida <= 25)
+                printf("\nEstas muy debil, debes descansar...\n\n");
+            else
+                printf("\nNo estas hambriento, no puedes puedes ir a cazar\n\n");
+            system("pause");
+            system("cls");
+            selector = 1;
+        }else if(vida)
+
+        if(vida <= 25 && selector == 52){
+            printf("\nEstas muy debil, debes descansar...\n\n");
             system("pause");
             system("cls");
             selector = 1;

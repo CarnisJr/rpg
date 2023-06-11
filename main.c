@@ -8,7 +8,7 @@
 int main(void){
 
     //Definir variables
-    int sed = 1, hambre = 1, numDias = 1, vida = 100;
+    int sed = 15, hambre = 10, numDias = 1, vida = 100;
     char selector, selectorMenuPrincipal;
     srand(time(NULL));
 

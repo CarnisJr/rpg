@@ -46,9 +46,11 @@ void interfaz(char selector, int vida, int sed, int hambre, int numDias){
             selector = 1;
         }
 
-        printf("\nTus estadisticas actuales son\n\n");
-        estadisticasFinales(vida, sed, hambre);
-
+        if(selector != 53){
+            printf("\nTus estadisticas actuales son\n\n");
+            estadisticasFinales(vida, sed, hambre);
+        }
+        
         switch (selector)
         {
         case 49:                                        //49 = '1'
@@ -116,6 +118,9 @@ void interfaz(char selector, int vida, int sed, int hambre, int numDias){
             system("pause");
             system("cls");
             break;
+        case 53:
+            return;
+            break;  
         default:
             system("cls");
             break;
@@ -179,18 +184,18 @@ char validacionDeOpcion(int numDias){
 
     do{
         printf("\nEstas en el dia: %d\n\n", numDias);
-        printf("1. Descansar\n2. Buscar Agua\n3. Cazar\n4. Buscar Objetos\n\n");
+        printf("1. Descansar\n2. Buscar Agua\n3. Cazar\n4. Buscar Objetos\n5. Volver al Menu Principal\n\n");
         printf("Ingrese una opcion: ");
         scanf(" %c", &selectorMenu);
         printf("\n");
-        if(isdigit(selectorMenu) != 1 || selectorMenu > 52){
+        if(isdigit(selectorMenu) != 1 || selectorMenu > 53){
             printf("Error\n");
         }
         system("pause");
         system("cls");
         fflush(stdin);
             
-    }while(isdigit(selectorMenu) != 1 || selectorMenu > 52);
+    }while(isdigit(selectorMenu) != 1 || selectorMenu > 53);
 
     return selectorMenu;
 }

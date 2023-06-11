@@ -8,7 +8,7 @@
 int main(void){
 
     //Definir variables
-    int sed = 15, hambre = 15, numDias = 1, vida = 100;
+    int sed = 1, hambre = 1, numDias = 1, vida = 100;
     char selector, selectorMenuPrincipal;
     srand(time(NULL));
 
@@ -34,6 +34,7 @@ int main(void){
             break;
         case 50:
             creditos();
+            selectorMenuPrincipal = 1;
             break;
         case 51:
             printf("\n---HASTA LA PROXIMA DEBIL HUMANO---\n\n");

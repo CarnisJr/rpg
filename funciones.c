@@ -164,7 +164,7 @@ void interfaz(char selector, int vida, int sed, int hambre, int numDias){
             printf("Solo %d dias vivo... una decepcion...\n\n", numDias);
             system("pause");
             system("cls");
-            exit(EXIT_SUCCESS);
+            return;
         }
 
         //Imprimir las estadisticas si pasaste el día
@@ -177,10 +177,9 @@ void interfaz(char selector, int vida, int sed, int hambre, int numDias){
     
     if(numDias == MAX_DIAS){
         printf("\nMuy bien debil humano... Has ganado...\n\n");
-        printf("SObreviviste por %d... Tienes mi respeto\n\n", numDias);
+        printf("Sobreviviste por %d dias... Tienes mi respeto\n\n", numDias);
         estadisticasFinales(vida, sed, hambre);
         printf("\n\n");
-        system("pause");
         system("cls");
         return;
     }

@@ -50,7 +50,7 @@ void interfaz(char selector, int vida, int sed, int hambre, int numDias){
             printf("\nTus estadisticas actuales son\n\n");
             estadisticasFinales(vida, sed, hambre);
         }
-        
+
         switch (selector)
         {
         case 49:                                        //49 = '1'
@@ -174,7 +174,16 @@ void interfaz(char selector, int vida, int sed, int hambre, int numDias){
         }
 
     }while(vida > 0 && numDias != MAX_DIAS); 
-
+    
+    if(numDias == MAX_DIAS){
+        printf("\nMuy bien debil humano... Has ganado...\n\n");
+        printf("SObreviviste por %d... Tienes mi respeto\n\n", numDias);
+        estadisticasFinales(vida, sed, hambre);
+        printf("\n\n");
+        system("pause");
+        system("cls");
+        return;
+    }
 }
 
 //Comprobación de opciones del menu de acciones
@@ -223,4 +232,12 @@ int comprobarEstadistica(int estadistica, int constante){
     return estadistica;
 }
 
+//Imprimir creditos
+void creditos(){
 
+    printf("\n---CREDITOS---\n\n");
+    printf("Creador: Christopher Miranda\n\n");
+    printf("Una produccion de Carnis Game Development\n\n");
+    system("pause");
+    system("cls");
+}

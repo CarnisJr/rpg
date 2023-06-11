@@ -33,7 +33,7 @@ int main(void){
             selectorMenuPrincipal = 1;
             break;
         case 50:
-
+            creditos();
             break;
         case 51:
             printf("\n---HASTA LA PROXIMA DEBIL HUMANO---\n\n");

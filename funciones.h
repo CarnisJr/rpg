@@ -6,4 +6,5 @@ void estadiscasFinales(int vida, int sed, int hambre);
 char validacionDeOpcion(int numDias);
 //Comprobar limites de estadisticas
 int comprobarEstadistica(int estadistica, int constante);
-
+//Imprimir los creditos
+void creditos();

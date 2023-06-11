@@ -97,7 +97,7 @@ void interfaz(char selector, int vida, int sed, int hambre, int numDias){
             system("cls");
             break;
         case 52:                                        //52 = '4'
-            printf("\nTe adentras en el bosque en busca de de una presa...\n\n");
+            printf("\nTe adentras en el bosque en busca de nuevos objetos...\n\n");
             if(chance >= 0 && chance <= 25){
                 printf("Tienes suerte... un kit de primeros auxilios. Pronto se acabara... tu vida aumeta en 15 unidades\n\n");
                 vida += 15;
